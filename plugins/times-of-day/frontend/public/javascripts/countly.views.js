@@ -29,6 +29,9 @@ window.DataPointsView = countlyView.extend({
 
             $(".d-table").stickyTableHeaders();
 
+            load(countlyGlobal["path"]+'/times-of-day/templates/sample.csv');
+
+
             $("#times-of-day-points-period").on("click", ".button", function() {
                 var period = $(this).data("period");
                 countlyDataPoints.setPeriod(period);
@@ -75,7 +78,7 @@ $(document).ready(function() {
         // var borderWidth = 3;
         // var duration = 500;
 
-        // var chart = d3.select('#chart').append('svg')
+        // var chart = d3.select('#times-of-day-points-chart').append('svg')
         // .attr('width', width + marginleft + marginright)
         // .attr('height', height + margintop + marginbottom)
         // .append('g')
@@ -87,17 +90,16 @@ $(document).ready(function() {
         // .style('fill-opacity', 0)
         // .style('stroke', '#000')
         // .style('stroke-width', borderWidth)
-        // .style('shape-rendering', 'crispEdges');
-
-        load(countlyGlobal["path"]+'/times-of-day/templates/sample.csv');
-        
-        alert('Grape');
+        // .style('shape-rendering', 'crispEdges');      
+        console.log('Orange');
         ////  END
     }
 });
 
 function load(name) {
+    console.log('load:in');
     d3.text(name, function(dataCSV) {
+        console.log('load:in:text');
 
         var labelsX = null;
         var data = [];
@@ -118,13 +120,16 @@ function load(name) {
             values: values
         });
 
-    })
+    });
 
         update(data, labelsX);
     });
 }
 
 function update(data, labelsX) {
+    console.log('load:in:update');
+    console.log(data);
+    console.log(labelsX);
     var margintop = 10;
     var marginright = 10; 
     var marginbottom = 10; 
@@ -137,7 +142,7 @@ function update(data, labelsX) {
     var borderWidth = 3;
     var duration = 500;
 
-    var chart = d3.select('#chart').append('svg')
+    var chart = d3.select('#times-of-day-points-chart').append('svg')
     .attr('width', width + marginleft + marginright)
     .attr('height', height + margintop + marginbottom)
     .append('g')
