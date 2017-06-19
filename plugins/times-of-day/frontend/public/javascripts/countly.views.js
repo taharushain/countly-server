@@ -17,30 +17,30 @@ window.DataPointsView = countlyView.extend({
         if (!isRefresh) {
             self.el.html(this.template(this.templateData));
 
-            self.dtable = $('.d-table').dataTable($.extend({}, $.fn.dataTable.defaults, {
-                "aaData": countlyDataPoints.getTableData(),
-                "aoColumns": [
-                { "mData": "app-name", "sType":"string", "sTitle": jQuery.i18n.map["compare.apps.app-name"] || "App Name", "sClass": "break" },
-                { "mData": "sessions", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["sidebar.analytics.sessions"] },
-                { "mData": "events", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["sidebar.events"] },
-                { "mData": "times-of-day-points", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["times-of-day.times-of-day-points"] }
-                ]
-            }));
+            // self.dtable = $('.d-table').dataTable($.extend({}, $.fn.dataTable.defaults, {
+            //     "aaData": countlyDataPoints.getTableData(),
+            //     "aoColumns": [
+            //     { "mData": "app-name", "sType":"string", "sTitle": jQuery.i18n.map["compare.apps.app-name"] || "App Name", "sClass": "break" },
+            //     { "mData": "sessions", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["sidebar.analytics.sessions"] },
+            //     { "mData": "events", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["sidebar.events"] },
+            //     { "mData": "times-of-day-points", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["times-of-day.times-of-day-points"] }
+            //     ]
+            // }));
 
-            $(".d-table").stickyTableHeaders();
+            // $(".d-table").stickyTableHeaders();
 
             load(countlyGlobal["path"]+'/times-of-day/templates/sample.csv');
 
 
-            $("#times-of-day-points-period").on("click", ".button", function() {
-                var period = $(this).data("period");
-                countlyDataPoints.setPeriod(period);
+            // $("#times-of-day-points-period").on("click", ".button", function() {
+            //     var period = $(this).data("period");
+            //     countlyDataPoints.setPeriod(period);
 
-                CountlyHelpers.refreshTable(self.dtable, countlyDataPoints.getTableData());
+            //     CountlyHelpers.refreshTable(self.dtable, countlyDataPoints.getTableData());
 
-                $("#times-of-day-points-period").find(".button").removeClass("active");
-                $(this).addClass("active");
-            });
+            //     $("#times-of-day-points-period").find(".button").removeClass("active");
+            //     $(this).addClass("active");
+            // });
         }
     },
     refresh:function () {
@@ -65,34 +65,7 @@ $(document).ready(function() {
         } else {
             $('#management-submenu').append(menu);
         }
-        ///// HERE
-        // var margintop = 10;
-        // var marginright = 10; 
-        // var marginbottom = 10; 
-        // var marginleft = 15;
-        // var width = 960 - marginleft - marginright;
-        // var height = 405 - margintop - marginbottom;
-        // var padding = 3;
-        // var xLabelHeight = 30;
-        // var yLabelWidth = 80;
-        // var borderWidth = 3;
-        // var duration = 500;
-
-        // var chart = d3.select('#times-of-day-points-chart').append('svg')
-        // .attr('width', width + marginleft + marginright)
-        // .attr('height', height + margintop + marginbottom)
-        // .append('g')
-        // .attr('transform', 'translate(' + marginleft + ',' + margintop + ')');
-
-        // var border = chart.append('rect')
-        // .attr('x', yLabelWidth)
-        // .attr('y', xLabelHeight)
-        // .style('fill-opacity', 0)
-        // .style('stroke', '#000')
-        // .style('stroke-width', borderWidth)
-        // .style('shape-rendering', 'crispEdges');      
-        console.log('Orange');
-        ////  END
+     
     }
 });
 
