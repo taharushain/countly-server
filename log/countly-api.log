@@ -1,0 +1,585 @@
+2017-06-19T13:30:00.421Z: INFO	[jobs:manager]	Trying to start job {"_id":"5947cba0089661681274e62c","name":"assistant:generate","created":1497877408624,"status":0,"started":null,"finished":null,"duration":0,"schedule":"every 30 minutes starting on the 0 min","next":1497879000000,"modified":1497877408631}
+Unhandled rejection for {"isFulfilled":false,"isRejected":true,"rejectionReason":{}} with reason {} stack  TypeError: Cannot read property 'initializeUnorderedBulkOp' of undefined
+    at /home/taharushain/Desktop/countly/countly-server/plugins/assistant/api/assistant.js:369:40
+    at Db.collection (/home/taharushain/Desktop/countly/countly-server/node_modules/mongodb/lib/db.js:464:27)
+    at /home/taharushain/Desktop/countly/countly-server/plugins/assistant/api/assistant.js:368:22
+    at checkIfDbOpened (/home/taharushain/Desktop/countly/countly-server/plugins/assistant/api/assistant.js:356:13)
+    at doNotificationShowAmountUpdateBulk (/home/taharushain/Desktop/countly/countly-server/plugins/assistant/api/assistant.js:366:9)
+    at /home/taharushain/Desktop/countly/countly-server/plugins/assistant/api/assistant.js:456:21
+    at tryCatcher (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:693:18)
+    at Promise._fulfill (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:638:18)
+    at PromiseArray._resolve (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise_array.js:126:19)
+    at PromiseArray._promiseFulfilled (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise_array.js:144:14)
+    at Promise._settlePromise (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:574:26)
+    at Promise._settlePromise0 (/home/taharushain/Desktop/countly/countly-server/node_modules/bluebird/js/release/promise.js:614:10)
+2017-06-19T13:30:05.028Z: ERROR	[core:api]	Logging unhandled rejection
+Uninstalling plugin "times-of-day"...
+Done uninstalling plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.68 MB → 921.93 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.53 kB → 62.43 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+Uninstalling plugin "times-of-day"...
+Done uninstalling plugin "times-of-day"
+Preparing production files
+2017-06-19T13:31:21.607Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:31:21.637Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:31:22.378Z: INFO	[jobs:manager]	Found 10 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate"]
+2017-06-19T13:31:22.748Z: INFO	[jobs:handle]	Starting job handle in 30629
+2017-06-19T13:31:22.778Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:31:22.794Z: INFO	[jobs:handle]	Starting job handle in 30647
+2017-06-19T13:31:22.819Z: INFO	[jobs:handle]	Starting job handle in 30635
+2017-06-19T13:31:22.825Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:31:22.841Z: INFO	[jobs:handle]	Starting job handle in 30641
+2017-06-19T13:31:22.850Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:31:22.873Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:31:25.319Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497879085308,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497879085317 }
+2017-06-19T13:31:25.326Z: INFO	[jobs:job]	no jobs found to replace for {"status":0,"name":"assistant:generate"}, saving new one
+2017-06-19T13:31:32.287Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497879092284,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497879092285,
+  modified: 1497879092286 }
+2017-06-19T13:31:32.291Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:31:32.285Z"
+2017-06-19T13:31:32.309Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497879092307,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879092308,
+  modified: 1497879092309 }
+2017-06-19T13:31:32.312Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497879092311,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879092311,
+  modified: 1497879092311 }
+2017-06-19T13:31:32.313Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497879092313,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879092313,
+  modified: 1497879092313 }
+2017-06-19T13:31:32.315Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:31:32.308Z"
+2017-06-19T13:31:32.316Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:31:32.311Z"
+2017-06-19T13:31:32.316Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:31:32.313Z"
+Installing plugin "times-of-day"...
+Done installing plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.69 MB → 925.26 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.6 kB → 62.5 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+2017-06-19T13:32:16.715Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:32:16.742Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:32:17.659Z: INFO	[jobs:manager]	Found 11 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate","times-of-day:stats"]
+2017-06-19T13:32:18.103Z: INFO	[jobs:handle]	Starting job handle in 30851
+2017-06-19T13:32:18.135Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:32:18.248Z: INFO	[jobs:handle]	Starting job handle in 30857
+2017-06-19T13:32:18.287Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:32:18.359Z: INFO	[jobs:handle]	Starting job handle in 30865
+2017-06-19T13:32:18.383Z: INFO	[jobs:handle]	Starting job handle in 30871
+2017-06-19T13:32:18.403Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:32:18.424Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:32:20.595Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497879140584,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497879140593 }
+2017-06-19T13:32:20.602Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:32:27.543Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497879147540,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497879147541,
+  modified: 1497879147542 }
+2017-06-19T13:32:27.546Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:32:27.541Z"
+2017-06-19T13:32:27.586Z: INFO	[jobs:job]	replacing job {"status":0,"name":"times-of-day:stats"} with { name: 'times-of-day:stats',
+  created: 1497879147584,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879147584,
+  modified: 1497879147586 }
+2017-06-19T13:32:27.589Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497879147588,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879147588,
+  modified: 1497879147588 }
+2017-06-19T13:32:27.591Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497879147590,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879147590,
+  modified: 1497879147591 }
+2017-06-19T13:32:27.593Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497879147592,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879147593,
+  modified: 1497879147593 }
+2017-06-19T13:32:27.595Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"times-of-day:stats"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:32:27.584Z"
+2017-06-19T13:32:27.610Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:32:27.588Z"
+2017-06-19T13:32:27.610Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:32:27.590Z"
+2017-06-19T13:32:27.611Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:32:27.593Z"
+Uninstalling plugin "times-of-day"...
+Done uninstalling plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.68 MB → 921.93 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.53 kB → 62.43 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+2017-06-19T13:42:54.732Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:42:54.764Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:42:55.706Z: INFO	[jobs:manager]	Found 10 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate"]
+2017-06-19T13:42:56.249Z: INFO	[jobs:handle]	Starting job handle in 31383
+2017-06-19T13:42:56.252Z: INFO	[jobs:handle]	Starting job handle in 31377
+2017-06-19T13:42:56.269Z: INFO	[jobs:handle]	Starting job handle in 31389
+2017-06-19T13:42:56.286Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:42:56.286Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:42:56.297Z: INFO	[jobs:handle]	Starting job handle in 31371
+2017-06-19T13:42:56.307Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:42:56.345Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:42:58.638Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497879778626,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497879778636 }
+2017-06-19T13:42:58.644Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:43:05.596Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497879785594,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497879785595,
+  modified: 1497879785596 }
+2017-06-19T13:43:05.597Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:43:05.595Z"
+2017-06-19T13:43:05.626Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497879785625,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879785625,
+  modified: 1497879785626 }
+2017-06-19T13:43:05.627Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497879785627,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879785627,
+  modified: 1497879785627 }
+2017-06-19T13:43:05.628Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497879785628,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879785628,
+  modified: 1497879785628 }
+2017-06-19T13:43:05.629Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:05.625Z"
+2017-06-19T13:43:05.629Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:05.627Z"
+2017-06-19T13:43:05.629Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:05.628Z"
+Installing plugin "times-of-day"...
+Done installing plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.7 MB → 929.5 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.6 kB → 62.5 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+2017-06-19T13:43:40.214Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:43:40.255Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:43:41.244Z: INFO	[jobs:manager]	Found 11 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate","times-of-day:stats"]
+2017-06-19T13:43:41.650Z: INFO	[jobs:handle]	Starting job handle in 31547
+2017-06-19T13:43:41.688Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:43:41.763Z: INFO	[jobs:handle]	Starting job handle in 31553
+2017-06-19T13:43:41.782Z: INFO	[jobs:handle]	Starting job handle in 31565
+2017-06-19T13:43:41.813Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:43:41.822Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:43:41.843Z: INFO	[jobs:handle]	Starting job handle in 31559
+2017-06-19T13:43:41.892Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:43:44.118Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497879824108,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497879824117 }
+2017-06-19T13:43:44.123Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:43:51.074Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497879831070,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497879831071,
+  modified: 1497879831073 }
+2017-06-19T13:43:51.078Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:43:51.071Z"
+2017-06-19T13:43:51.112Z: INFO	[jobs:job]	replacing job {"status":0,"name":"times-of-day:stats"} with { name: 'times-of-day:stats',
+  created: 1497879831110,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879831111,
+  modified: 1497879831111 }
+2017-06-19T13:43:51.114Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497879831114,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879831114,
+  modified: 1497879831114 }
+2017-06-19T13:43:51.116Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497879831115,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879831116,
+  modified: 1497879831116 }
+2017-06-19T13:43:51.118Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497879831117,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879831118,
+  modified: 1497879831118 }
+2017-06-19T13:43:51.120Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"times-of-day:stats"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:51.111Z"
+2017-06-19T13:43:51.121Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:51.114Z"
+2017-06-19T13:43:51.121Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:51.116Z"
+2017-06-19T13:43:51.122Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:43:51.118Z"
+Uninstalling plugin "times-of-day"...
+Done uninstalling plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.68 MB → 921.93 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.53 kB → 62.43 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+2017-06-19T13:45:56.521Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:45:56.559Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:45:57.838Z: INFO	[jobs:manager]	Found 10 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate"]
+2017-06-19T13:45:58.627Z: INFO	[jobs:handle]	Starting job handle in 31794
+2017-06-19T13:45:58.671Z: INFO	[jobs:handle]	Starting job handle in 31782
+2017-06-19T13:45:58.684Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:45:58.706Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:45:58.814Z: INFO	[jobs:handle]	Starting job handle in 31788
+2017-06-19T13:45:58.897Z: INFO	[jobs:handle]	Starting job handle in 31795
+2017-06-19T13:45:58.911Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:45:58.946Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:46:00.817Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497879960774,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497879960814 }
+2017-06-19T13:46:00.880Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:46:07.750Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497879967747,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497879967748,
+  modified: 1497879967749 }
+2017-06-19T13:46:07.753Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:46:07.748Z"
+2017-06-19T13:46:07.772Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497879967771,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879967772,
+  modified: 1497879967772 }
+2017-06-19T13:46:07.774Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497879967773,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879967773,
+  modified: 1497879967773 }
+2017-06-19T13:46:07.775Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497879967774,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497879967774,
+  modified: 1497879967774 }
+2017-06-19T13:46:07.777Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:46:07.772Z"
+2017-06-19T13:46:07.777Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:46:07.773Z"
+2017-06-19T13:46:07.777Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:46:07.774Z"
+Installing plugin "times-of-day"...
+Done installing plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.69 MB → 929.21 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.6 kB → 62.5 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+2017-06-19T13:47:13.332Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:47:13.370Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:47:14.672Z: INFO	[jobs:manager]	Found 11 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate","times-of-day:stats"]
+2017-06-19T13:47:15.482Z: INFO	[jobs:handle]	Starting job handle in 32004
+2017-06-19T13:47:15.535Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:47:15.621Z: INFO	[jobs:handle]	Starting job handle in 32006
+2017-06-19T13:47:15.669Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:47:15.739Z: INFO	[jobs:handle]	Starting job handle in 31990
+2017-06-19T13:47:15.737Z: INFO	[jobs:handle]	Starting job handle in 31992
+2017-06-19T13:47:15.798Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:47:15.828Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:47:17.641Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497880037559,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497880037608 }
+2017-06-19T13:47:17.669Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:47:24.528Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497880044525,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497880044526,
+  modified: 1497880044527 }
+2017-06-19T13:47:24.530Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:47:24.526Z"
+2017-06-19T13:47:24.551Z: INFO	[jobs:job]	replacing job {"status":0,"name":"times-of-day:stats"} with { name: 'times-of-day:stats',
+  created: 1497880044549,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880044550,
+  modified: 1497880044551 }
+2017-06-19T13:47:24.553Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497880044552,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880044553,
+  modified: 1497880044553 }
+2017-06-19T13:47:24.555Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497880044554,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880044554,
+  modified: 1497880044555 }
+2017-06-19T13:47:24.557Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497880044556,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880044556,
+  modified: 1497880044556 }
+2017-06-19T13:47:24.559Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"times-of-day:stats"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:47:24.550Z"
+2017-06-19T13:47:24.560Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:47:24.553Z"
+2017-06-19T13:47:24.560Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:47:24.554Z"
+2017-06-19T13:47:24.560Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:47:24.556Z"
+Uninstalling plugin "times-of-day"...
+Done uninstalling plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.68 MB → 921.93 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.53 kB → 62.43 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+Uninstalling plugin "times-of-day"...
+Done uninstalling plugin "times-of-day"
+Preparing production files
+2017-06-19T13:53:40.185Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:53:40.219Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:53:41.048Z: INFO	[jobs:manager]	Found 10 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate"]
+2017-06-19T13:53:41.437Z: INFO	[jobs:handle]	Starting job handle in 32533
+2017-06-19T13:53:41.443Z: INFO	[jobs:handle]	Starting job handle in 32527
+2017-06-19T13:53:41.469Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:53:41.475Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:53:41.573Z: INFO	[jobs:handle]	Starting job handle in 32540
+2017-06-19T13:53:41.604Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:53:41.671Z: INFO	[jobs:handle]	Starting job handle in 32539
+2017-06-19T13:53:41.726Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant"]
+2017-06-19T13:53:43.995Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497880423983,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497880423993 }
+2017-06-19T13:53:44.002Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:53:50.959Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497880430957,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497880430957,
+  modified: 1497880430958 }
+2017-06-19T13:53:50.961Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:53:50.957Z"
+2017-06-19T13:53:50.983Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497880430982,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880430982,
+  modified: 1497880430983 }
+2017-06-19T13:53:50.984Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497880430984,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880430984,
+  modified: 1497880430984 }
+2017-06-19T13:53:50.985Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497880430985,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880430985,
+  modified: 1497880430985 }
+2017-06-19T13:53:50.987Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:53:50.982Z"
+2017-06-19T13:53:50.987Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:53:50.984Z"
+2017-06-19T13:53:50.987Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:53:50.985Z"
+Installing plugin "times-of-day"...
+Done installing plugin "times-of-day"
+Preparing production files
+Done preparing production files with null / "Running \"plugins\" task\nPreparing production files for following plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing production files\n\nRunning \"concat:plugins\" (concat) task\n\nRunning \"uglify:plugins\" (uglify) task\n>> 1 file created 1.7 MB → 929.19 kB\n\nRunning \"copy:plugins\" (copy) task\nCopied 7 files\n\nRunning \"cssmin:plugins\" (cssmin) task\n>> 1 file created. 75.6 kB → 62.5 kB\n\nRunning \"locales\" task\nPreparing locale files for core & plugins: [\"mobile\",\"web\",\"desktop\",\"plugins\",\"density\",\"locale\",\"browser\",\"sources\",\"views\",\"enterpriseinfo\",\"logger\",\"systemlogs\",\"errorlogs\",\"populator\",\"reports\",\"crashes\",\"push\",\"star-rating\",\"slipping-away-users\",\"compare\",\"dbviewer\",\"assistant\",\"times-of-day\"]\nDone preparing locale files\n\nRunning \"concat:locales_\" (concat) task\n\nRunning \"concat:locales_ar\" (concat) task\n\nRunning \"concat:locales_ca\" (concat) task\n\nRunning \"concat:locales_de\" (concat) task\n\nRunning \"concat:locales_el\" (concat) task\n\nRunning \"concat:locales_en\" (concat) task\n\nRunning \"concat:locales_es\" (concat) task\n\nRunning \"concat:locales_et\" (concat) task\n\nRunning \"concat:locales_fr\" (concat) task\n\nRunning \"concat:locales_hu\" (concat) task\n\nRunning \"concat:locales_it\" (concat) task\n\nRunning \"concat:locales_ja\" (concat) task\n\nRunning \"concat:locales_ko\" (concat) task\n\nRunning \"concat:locales_lv\" (concat) task\n\nRunning \"concat:locales_nb\" (concat) task\n\nRunning \"concat:locales_nl\" (concat) task\n\nRunning \"concat:locales_pt\" (concat) task\n\nRunning \"concat:locales_ro\" (concat) task\n\nRunning \"concat:locales_ru\" (concat) task\n\nRunning \"concat:locales_sl\" (concat) task\n\nRunning \"concat:locales_sv\" (concat) task\n\nRunning \"concat:locales_tr\" (concat) task\n\nRunning \"concat:locales_vi\" (concat) task\n\nRunning \"concat:locales_zh\" (concat) task\n\nRunning \"concat:locales_pl\" (concat) task\n\nDone.\n"
+2017-06-19T13:54:15.358Z: INFO	[jobs:manager]	Starting job manager
+2017-06-19T13:54:15.393Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:54:16.410Z: INFO	[jobs:manager]	Found 11 job types, starting monitoring: ["api:clear","api:clearTokens","api:ipcTest","api:ping","reports:send","push:build","push:clear","push:send","push:validate","assistant:generate","times-of-day:stats"]
+2017-06-19T13:54:16.790Z: INFO	[jobs:handle]	Starting job handle in 32715
+2017-06-19T13:54:16.842Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:54:17.071Z: INFO	[jobs:handle]	Starting job handle in 32728
+2017-06-19T13:54:17.075Z: INFO	[jobs:handle]	Starting job handle in 32727
+2017-06-19T13:54:17.112Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:54:17.116Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:54:17.177Z: INFO	[jobs:handle]	Starting job handle in 32721
+2017-06-19T13:54:17.232Z: INFO	[jobs:scanner]	Checking plugins ["mobile","web","desktop","plugins","density","locale","browser","sources","views","enterpriseinfo","logger","systemlogs","errorlogs","populator","reports","crashes","push","star-rating","slipping-away-users","compare","dbviewer","assistant","times-of-day"]
+2017-06-19T13:54:19.314Z: INFO	[jobs:job]	replacing job {"status":0,"name":"assistant:generate"} with { name: 'assistant:generate',
+  created: 1497880459293,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 30 minutes starting on the 0 min',
+  next: 1497880800000,
+  modified: 1497880459311 }
+2017-06-19T13:54:19.324Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"assistant:generate"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T14:00:00.000Z"
+2017-06-19T13:54:26.248Z: INFO	[jobs:job]	replacing job {"status":0,"name":"reports:send"} with { name: 'reports:send',
+  created: 1497880466245,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 hour starting on the 0 min',
+  next: 1497880466246,
+  modified: 1497880466248 }
+2017-06-19T13:54:26.251Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"reports:send"}: current "2017-06-19T14:00:00.000Z", won't replace to "2017-06-19T13:54:26.246Z"
+2017-06-19T13:54:26.293Z: INFO	[jobs:job]	replacing job {"status":0,"name":"times-of-day:stats"} with { name: 'times-of-day:stats',
+  created: 1497880466291,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880466292,
+  modified: 1497880466292 }
+2017-06-19T13:54:26.295Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:ping"} with { name: 'api:ping',
+  created: 1497880466294,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880466294,
+  modified: 1497880466294 }
+2017-06-19T13:54:26.297Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clear"} with { name: 'api:clear',
+  created: 1497880466296,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880466296,
+  modified: 1497880466297 }
+2017-06-19T13:54:26.300Z: INFO	[jobs:job]	replacing job {"status":0,"name":"api:clearTokens"} with { name: 'api:clearTokens',
+  created: 1497880466299,
+  status: 0,
+  started: null,
+  finished: null,
+  duration: 0,
+  schedule: 'every 1 day',
+  next: 1497880466299,
+  modified: 1497880466299 }
+2017-06-19T13:54:26.303Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"times-of-day:stats"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:54:26.292Z"
+2017-06-19T13:54:26.303Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:ping"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:54:26.294Z"
+2017-06-19T13:54:26.304Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clear"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:54:26.296Z"
+2017-06-19T13:54:26.304Z: INFO	[jobs:job]	last job is scheduled correctly, won't replace anything for {"status":0,"name":"api:clearTokens"}: current "2017-06-20T00:00:00.000Z", won't replace to "2017-06-19T13:54:26.299Z"

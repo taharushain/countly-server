@@ -1,0 +1,18 @@
+{
+  "name": "times-of-days",
+  "title": "Times of Day",
+  "version": "1.0.0",
+  "description": "Records and visualise days (Monday to Sunday) and times (12 am to 11pm) of all sessions and custom events",
+  "author": "Taha Rushain",
+  "homepage": "https://count.ly/plugins/",
+  "repository" :"",
+  "bugs": "",
+  "keywords": [
+    "countly",
+    "analytics"
+  ],
+  "dependencies": {
+    "d3": "3"
+  },
+  "private": true
+}
