@@ -28,7 +28,7 @@ log = common.log('times-of-day:api');
                     }
                 }
 
-                updateDataPoints(ob.params.app_id, 0, eventCount);
+                updateDataPoints(ob.params.app_id, eventCount);
             }
         });
 
@@ -59,7 +59,7 @@ log = common.log('times-of-day:api');
                 sessionCount++;
             }
 
-            updateDataPoints(params.app_id, sessionCount, eventCount);
+            updateDataPoints(params.app_id, sessionCount+eventCount);
         }
 
         return true;
@@ -80,7 +80,7 @@ log = common.log('times-of-day:api');
             "s" : 286
         }
         */
-        function updateDataPoints(appId, sessionCount, eventCount) {
+        function updateDataPoints(appId, eventCount) {
             var utcMoment = common.moment.utc();
 
             common.db.collection('times_of_day_data_points').update(
@@ -94,8 +94,7 @@ log = common.log('times-of-day:api');
                     m: utcMoment.format("dddd:HH")
                 },
                 $inc: {
-                    e: eventCount,
-                    s: sessionCount
+                    e: eventCount
                 }
             },
             {

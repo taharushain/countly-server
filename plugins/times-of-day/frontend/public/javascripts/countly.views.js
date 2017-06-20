@@ -1,126 +1,139 @@
 window.DataPointsView = countlyView.extend({
-    beforeRender: function() {
-        var self = this;
+  beforeRender: function() {
+    var self = this;
 
-        return $.when($.get(countlyGlobal["path"]+'/times-of-day/templates/times-of-day-points.html', function(src){
-            self.template = Handlebars.compile(src);
-        }), countlyDataPoints.initialize()).then(function () {});
-    },
-    renderCommon:function (isRefresh) {
-        var self = this;
+    return $.when($.get(countlyGlobal["path"]+'/times-of-day/templates/times-of-day-points.html', function(src){
+      self.template = Handlebars.compile(src);
+    }), countlyDataPoints.initialize()).then(function () {});
+  },
+  renderCommon:function (isRefresh) {
+    var self = this;
 
-        this.templateData = {
-            "page-title": jQuery.i18n.map["times-of-day.times-of-day-points"],
-            "main": countlyDataPoints.getDataPointsObj()
-        };
+    this.templateData = {
+      "page-title": jQuery.i18n.map["times-of-day.times-of-day-points"],
+      "main": countlyDataPoints.getDataPointsObj()
+    };
 
-        if (!isRefresh) {
-            self.el.html(this.template(this.templateData));
+    if (!isRefresh) {
+      self.el.html(this.template(this.templateData));
 
-            load(countlyGlobal["path"]+'/times-of-day/templates/sample.csv');
-        }
-    },
-    refresh:function () {
-        return true;
+      load(countlyGlobal["path"]+'/times-of-day/templates/sample.csv');
     }
+  },
+  refresh:function () {
+    return true;
+  }
 });
 
 app.dataPointsView = new DataPointsView();
 
 app.route("/manage/times-of-day-points", '', function () {
-    this.renderWhenReady(this.dataPointsView);
+  this.renderWhenReady(this.dataPointsView);
 });
 
 $(document).ready(function() {
-    if(countlyGlobal["member"].global_admin){
-        var menu = '<a href="#/manage/times-of-day-points" class="item">'+
-        '<div class="text" data-localize="times-of-day.times-of-day-points"></div>'+
-        '</a>';
+  if(countlyGlobal["member"].global_admin){
+    var menu = '<a href="#/manage/times-of-day-points" class="item">'+
+    '<div class="text" data-localize="times-of-day.times-of-day-points"></div>'+
+    '</a>';
 
-        if($('#management-submenu .help-toggle').length) {
-            $('#management-submenu .help-toggle').before(menu);
-        } else {
-            $('#management-submenu').append(menu);
-        }
-     
+    if($('#management-submenu .help-toggle').length) {
+      $('#management-submenu .help-toggle').before(menu);
+    } else {
+      $('#management-submenu').append(menu);
     }
+
+  }
 });
 
 function load(name) {
 
-    console.log(countlyDataPoints.getDataPointsObj());
+  // console.log(countlyDataPoints.getDataPointsObj());
 
-    console.log('load:in');
-    d3.text(name, function(dataCSV) {
-        console.log('load:in:text');
+  // console.log('load:in');
+  d3.text(name, function(dataCSV) {
+    // console.log('load:in:text');
 
-        var labelsX = null;
-        var data = [];
+    var labelsX = null;
+    var data = [];
 
-        d3.csv.parseRows(dataCSV, function(d) {
+    d3.csv.parseRows(dataCSV, function(d) {
 
-          if (labelsX === null) return labelsX = d.slice(1);
+      if (labelsX === null) return labelsX = d.slice(1);
 
-          var values = d.slice(1);
-          var i = 0;
+      var values = d.slice(1);
+      var i = 0;
 
-          for (; i < values.length; i++) {
-            values[i] = parseInt(values[i], 10);
+      for (; i < values.length; i++) {
+        values[i] = parseInt(values[i], 10);
+      }
+
+      data.push({
+        label: d[0],
+        values: values
+      });
+
+    });
+
+
+    var times_data = countlyDataPoints.getDataPointsObj();
+    for (var i = 0; i < times_data.length; i++) {
+        var anchors = times_data[i].m.split(":");
+        var day = anchors[0];
+        var hour = parseInt(anchors[1]);
+        var events = times_data[i].e;
+        
+        for(var  j=0; j < data.length; j++){
+          if(data[j].label === day){
+            data[j].values[hour] = events;
+          }
         }
 
-        data.push({
-            label: d[0],
-            values: values
-        });
-
-    });
-
-        update(data, labelsX);
-    });
+    } 
+    update(data, labelsX);
+  });
 }
 
 function update(data, labelsX) {
-    console.log('load:in:update');
-    console.log(data);
-    console.log(labelsX);
-    var margintop = 10;
-    var marginright = 10; 
-    var marginbottom = 10; 
-    var marginleft = 15;
-    var width = 960 - marginleft - marginright;
-    var height = 405 - margintop - marginbottom;
-    var padding = 3;
-    var xLabelHeight = 30;
-    var yLabelWidth = 80;
-    var borderWidth = 3;
-    var duration = 500;
 
-    var chart = d3.select('#times-of-day-points-chart').append('svg')
-    .attr('width', width + marginleft + marginright)
-    .attr('height', height + margintop + marginbottom)
-    .append('g')
-    .attr('transform', 'translate(' + marginleft + ',' + margintop + ')');
+  var margintop = 10;
+  var marginright = 10; 
+  var marginbottom = 10; 
+  var marginleft = 15;
+  var width = 960 - marginleft - marginright;
+  var height = 405 - margintop - marginbottom;
+  var padding = 3;
+  var xLabelHeight = 30;
+  var yLabelWidth = 80;
+  var borderWidth = 3;
+  var duration = 500;
 
-    var border = chart.append('rect')
-    .attr('x', yLabelWidth)
-    .attr('y', xLabelHeight)
-    .style('fill-opacity', 0)
-    .style('stroke', '#000')
-    .style('stroke-width', borderWidth)
-    .style('shape-rendering', 'crispEdges');
+  var chart = d3.select('#times-of-day-points-chart').append('svg')
+  .attr('width', width + marginleft + marginright)
+  .attr('height', height + margintop + marginbottom)
+  .append('g')
+  .attr('transform', 'translate(' + marginleft + ',' + margintop + ')');
 
-    var allValues = Array.prototype.concat.apply([], data.map(function(d) { return d.values; }));
-    var maxWidth = d3.max(data.map(function(d) { return d.values.length; }));
-    var maxR = d3.min([(width - yLabelWidth) / maxWidth, (height - xLabelHeight) / data.length]) / 2;
+  var border = chart.append('rect')
+  .attr('x', yLabelWidth)
+  .attr('y', xLabelHeight)
+  .style('fill-opacity', 0)
+  .style('stroke', '#000')
+  .style('stroke-width', borderWidth)
+  .style('shape-rendering', 'crispEdges');
 
-    var r = function(d) {
-      if (d === 0) return 0;
+  var allValues = Array.prototype.concat.apply([], data.map(function(d) { return d.values; }));
+  var maxWidth = d3.max(data.map(function(d) { return d.values.length; }));
+  var maxR = d3.min([(width - yLabelWidth) / maxWidth, (height - xLabelHeight) / data.length]) / 2;
 
-      f = d3.scale.sqrt()
-      .domain([d3.min(allValues), d3.max(allValues)])
-      .rangeRound([2, maxR - padding]);
+  var r = function(d) {
+    if (d === 0) return 0;
 
-      return f(d);
+    f = d3.scale.sqrt()
+    .domain([d3.min(allValues), d3.max(allValues)])
+    .rangeRound([2, maxR - padding]);
+
+    return f(d);
   }
 
   var c = d3.scale.linear()
@@ -173,12 +186,12 @@ function update(data, labelsX) {
     var selection = d3.select(this);
     selection.select('rect').transition().duration(100).style('opacity', 1);
     selection.select("text").transition().duration(100).style('opacity', 1);
-})
+  })
   .on('mouseout', function(d){
     var selection = d3.select(this);
     selection.select('rect').transition().style('opacity', 0);
     selection.select("text").transition().style('opacity', 0);
-});
+  });
 
   dotLabelEnter.append('rect')
   .style('fill', '#000000')
