@@ -11,36 +11,13 @@ window.DataPointsView = countlyView.extend({
 
         this.templateData = {
             "page-title": jQuery.i18n.map["times-of-day.times-of-day-points"],
-            "periods": countlyDataPoints.getPeriods()
+            "main": countlyDataPoints.getDataPointsObj()
         };
 
         if (!isRefresh) {
             self.el.html(this.template(this.templateData));
 
-            // self.dtable = $('.d-table').dataTable($.extend({}, $.fn.dataTable.defaults, {
-            //     "aaData": countlyDataPoints.getTableData(),
-            //     "aoColumns": [
-            //     { "mData": "app-name", "sType":"string", "sTitle": jQuery.i18n.map["compare.apps.app-name"] || "App Name", "sClass": "break" },
-            //     { "mData": "sessions", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["sidebar.analytics.sessions"] },
-            //     { "mData": "events", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["sidebar.events"] },
-            //     { "mData": "times-of-day-points", "sType":"formatted-num", "mRender":function(d) { return countlyCommon.formatNumber(d); }, "sTitle": jQuery.i18n.map["times-of-day.times-of-day-points"] }
-            //     ]
-            // }));
-
-            // $(".d-table").stickyTableHeaders();
-
             load(countlyGlobal["path"]+'/times-of-day/templates/sample.csv');
-
-
-            // $("#times-of-day-points-period").on("click", ".button", function() {
-            //     var period = $(this).data("period");
-            //     countlyDataPoints.setPeriod(period);
-
-            //     CountlyHelpers.refreshTable(self.dtable, countlyDataPoints.getTableData());
-
-            //     $("#times-of-day-points-period").find(".button").removeClass("active");
-            //     $(this).addClass("active");
-            // });
         }
     },
     refresh:function () {
@@ -70,6 +47,9 @@ $(document).ready(function() {
 });
 
 function load(name) {
+
+    console.log(countlyDataPoints.getDataPointsObj());
+
     console.log('load:in');
     d3.text(name, function(dataCSV) {
         console.log('load:in:text');
