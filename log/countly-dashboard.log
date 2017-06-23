@@ -1,0 +1,18 @@
+{ MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: getaddrinfo EAI_AGAIN localhost:27017]
+    at Pool.<anonymous> (/home/taharushain/Desktop/countly/countly-server/node_modules/mongodb-core/lib/topologies/server.js:328:35)
+    at emitOne (events.js:96:13)
+    at Pool.emit (events.js:191:7)
+    at Connection.<anonymous> (/home/taharushain/Desktop/countly/countly-server/node_modules/mongodb-core/lib/connection/pool.js:274:12)
+    at Object.onceWrapper (events.js:293:19)
+    at emitTwo (events.js:106:13)
+    at Connection.emit (events.js:194:7)
+    at Socket.<anonymous> (/home/taharushain/Desktop/countly/countly-server/node_modules/mongodb-core/lib/connection/connection.js:177:49)
+    at Object.onceWrapper (events.js:293:19)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at connectErrorNT (net.js:1034:8)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+  name: 'MongoError',
+  message: 'failed to connect to server [localhost:27017] on first connect [MongoError: getaddrinfo EAI_AGAIN localhost:27017]' }
+2017-06-21T19:12:51.863Z: ERROR	[db:read]	Error reading plugins {"name":"findOne","args":[{"_id":"plugins"},null]} MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: getaddrinfo EAI_AGAIN localhost:27017] {"name":"MongoError","message":"failed to connect to server [localhost:27017] on first connect [MongoError: getaddrinfo EAI_AGAIN localhost:27017]"}

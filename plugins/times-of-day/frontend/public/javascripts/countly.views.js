@@ -27,20 +27,23 @@ window.DataPointsView = countlyView.extend({
 
 app.dataPointsView = new DataPointsView();
 
-app.route("/manage/times-of-day-points", '', function () {
+app.route("/analytics/times-of-day-points", 'times', function () {
   this.renderWhenReady(this.dataPointsView);
 });
 
 $(document).ready(function() {
   if(countlyGlobal["member"].global_admin){
-    var menu = '<a href="#/manage/times-of-day-points" class="item">'+
+    var menu = '<a href="#/analytics/times-of-day-points" class="item">'+
     '<div class="text" data-localize="times-of-day.times-of-day-points"></div>'+
     '</a>';
 
-    if($('#management-submenu .help-toggle').length) {
-      $('#management-submenu .help-toggle').before(menu);
+    $('#web-type #analytics-submenu').append(menu);
+    $('#mobile-type #analytics-submenu').append(menu);
+
+    if($('#analytics-submenu .help-toggle').length) {
+      $('#analytics-submenu .help-toggle').before(menu);
     } else {
-      $('#management-submenu').append(menu);
+      $('#analytics-submenu').append(menu);
     }
 
   }
