@@ -1,17 +1,17 @@
-window.DataPointsView = countlyView.extend({
+window.TimesDayDataView = countlyView.extend({
   beforeRender: function() {
     var self = this;
 
     return $.when($.get(countlyGlobal["path"]+'/times-of-day/templates/times-of-day-points.html', function(src){
       self.template = Handlebars.compile(src);
-    }), countlyDataPoints.initialize()).then(function () {});
+    }), countlyTimesDayData.initialize()).then(function () {});
   },
   renderCommon:function (isRefresh) {
     var self = this;
 
     this.templateData = {
       "page-title": jQuery.i18n.map["times-of-day.times-of-day-points"],
-      "main": countlyDataPoints.getDataPointsObj()
+      "main": countlyTimesDayData.getTimesDayDataObj()
     };
 
     if (!isRefresh) {
@@ -25,10 +25,10 @@ window.DataPointsView = countlyView.extend({
   }
 });
 
-app.dataPointsView = new DataPointsView();
+app.timesDayDataView = new TimesDayDataView();
 
 app.route("/analytics/times-of-day-points", 'times', function () {
-  this.renderWhenReady(this.dataPointsView);
+  this.renderWhenReady(this.timesDayDataView);
 });
 
 $(document).ready(function() {
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 function load(name) {
 
-  // console.log(countlyDataPoints.getDataPointsObj());
+  // console.log(countlyTimesDayData.getTimesDayDataObj());
 
   // console.log('load:in');
   d3.text(name, function(dataCSV) {
@@ -79,7 +79,7 @@ function load(name) {
     });
 
 
-    var times_data = countlyDataPoints.getDataPointsObj();
+    var times_data = countlyTimesDayData.getTimesDayDataObj();
     for (var i = 0; i < times_data.length; i++) {
         var anchors = times_data[i].m.split(":");
         var day = anchors[0];

@@ -1,9 +1,9 @@
-(function (countlyDataPoints, $) {
+(function (countlyTimesDayData, $) {
     //Private Properties
-    var _dataPointsObj = {};
+    var _timesDayDataObj = {};
 
     //Public Methods
-    countlyDataPoints.initialize = function () {
+    countlyTimesDayData.initialize = function () {
         return $.when(
             $.ajax({
                 type:"GET",
@@ -13,7 +13,7 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
-                    _dataPointsObj = json;                    
+                    _timesDayDataObj = json;                    
                 }
             })
         ).then(function(){
@@ -21,12 +21,12 @@
         });
     };
 
-    countlyDataPoints.refresh = function () {
+    countlyTimesDayData.refresh = function () {
         return true;
     };
 
-    countlyDataPoints.getDataPointsObj = function () {
-        return _dataPointsObj;
+    countlyTimesDayData.getTimesDayDataObj = function () {
+        return _timesDayDataObj;
     }
 
 
@@ -40,5 +40,5 @@
         }
     }
 
-})(window.countlyDataPoints = window.countlyDataPoints || {}, jQuery);
+})(window.countlyTimesDayData = window.countlyTimesDayData || {}, jQuery);
 

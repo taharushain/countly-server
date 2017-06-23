@@ -28,7 +28,7 @@ log = common.log('times-of-day:api');
                     }
                 }
 
-                updateDataPoints(ob.params.app_id, eventCount);
+                updateTimesDayData(ob.params.app_id, eventCount);
             }
         });
 
@@ -59,7 +59,7 @@ log = common.log('times-of-day:api');
                 sessionCount++;
             }
 
-            updateDataPoints(params.app_id, sessionCount+eventCount);
+            updateTimesDayData(params.app_id, sessionCount+eventCount);
         }
 
         return true;
@@ -80,7 +80,7 @@ log = common.log('times-of-day:api');
             "s" : 286
         }
         */
-        function updateDataPoints(appId, eventCount) {
+        function updateTimesDayData(appId, eventCount) {
             var utcMoment = common.moment.utc();
 
             common.db.collection('times_of_day_data_points').update(
